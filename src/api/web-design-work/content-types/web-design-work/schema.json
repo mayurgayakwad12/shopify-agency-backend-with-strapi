@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "web_design_works",
+  "info": {
+    "singularName": "web-design-work",
+    "pluralName": "web-design-works",
+    "displayName": "Web Design Work"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

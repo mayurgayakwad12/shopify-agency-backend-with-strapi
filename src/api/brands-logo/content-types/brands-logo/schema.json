@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "brands_logos",
+  "info": {
+    "singularName": "brands-logo",
+    "pluralName": "brands-logos",
+    "displayName": "Brands Logo",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "name": {
+      "type": "string"
+    }
+  }
+}
