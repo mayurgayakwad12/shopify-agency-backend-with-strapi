@@ -11,17 +11,14 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "logo": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
-      "allowedTypes": [
-        "images",
-        "files"
-      ]
-    },
     "name": {
-      "type": "string"
+      "type": "string",
+      "required": true
+    },
+    "src": {
+      "type": "text",
+      "required": true,
+      "default": "https://png.pngtree.com/png-clipart/20190925/original/pngtree-no-image-vector-illustration-isolated-png-image_4979075.jpg"
     }
   }
 }

@@ -390,20 +390,22 @@ export interface ApiBrandsLogoBrandsLogo extends Struct.CollectionTypeSchema {
       'api::brands-logo.brands-logo'
     > &
       Schema.Attribute.Private;
-    logo: Schema.Attribute.Media<'images' | 'files'> &
-      Schema.Attribute.Required;
-    name: Schema.Attribute.String;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
+    src: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'https://png.pngtree.com/png-clipart/20190925/original/pngtree-no-image-vector-illustration-isolated-png-image_4979075.jpg'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
   };
 }
 
-export interface ApiCaseStudyCaseStudy extends Struct.SingleTypeSchema {
+export interface ApiCaseStudyCaseStudy extends Struct.CollectionTypeSchema {
   collectionName: 'case_studies';
   info: {
-    displayName: 'case-study';
+    description: '';
+    displayName: 'Case Study';
     pluralName: 'case-studies';
     singularName: 'case-study';
   };
@@ -411,10 +413,6 @@ export interface ApiCaseStudyCaseStudy extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    caseStudiesImages: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -425,7 +423,8 @@ export interface ApiCaseStudyCaseStudy extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.Text;
+    src: Schema.Attribute.Text & Schema.Attribute.Required;
+    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -469,10 +468,7 @@ export interface ApiServiceCardServiceCard extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    cardImage: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    > &
-      Schema.Attribute.Required;
+    cardImageSrc: Schema.Attribute.Text & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -483,8 +479,8 @@ export interface ApiServiceCardServiceCard extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    services: Schema.Attribute.Text;
-    title: Schema.Attribute.Text;
+    services: Schema.Attribute.Text & Schema.Attribute.Required;
+    title: Schema.Attribute.Text & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -495,6 +491,7 @@ export interface ApiWebDesignWorkWebDesignWork
   extends Struct.CollectionTypeSchema {
   collectionName: 'web_design_works';
   info: {
+    description: '';
     displayName: 'Web Design Work';
     pluralName: 'web-design-works';
     singularName: 'web-design-work';
@@ -506,7 +503,6 @@ export interface ApiWebDesignWorkWebDesignWork
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -515,6 +511,7 @@ export interface ApiWebDesignWorkWebDesignWork
       Schema.Attribute.Private;
     name: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
+    src: Schema.Attribute.Text & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

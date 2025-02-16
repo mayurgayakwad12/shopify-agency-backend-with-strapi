@@ -4,7 +4,8 @@
   "info": {
     "singularName": "web-design-work",
     "pluralName": "web-design-works",
-    "displayName": "Web Design Work"
+    "displayName": "Web Design Work",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,15 +15,9 @@
       "type": "string",
       "required": true
     },
-    "image": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": false
+    "src": {
+      "type": "text",
+      "required": true
     }
   }
 }

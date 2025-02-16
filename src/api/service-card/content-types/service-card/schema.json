@@ -12,21 +12,16 @@
   },
   "attributes": {
     "title": {
-      "type": "text"
-    },
-    "cardImage": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+      "type": "text",
+      "required": true
     },
     "services": {
-      "type": "text"
+      "type": "text",
+      "required": true
+    },
+    "cardImageSrc": {
+      "type": "text",
+      "required": true
     }
   }
 }
